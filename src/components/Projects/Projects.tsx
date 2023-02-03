@@ -1,17 +1,22 @@
-import { ProjectElement, ProjectElementProp } from "./ProjectsElement"
+import { ProjectElement, ProjectElementProp } from "./ProjectsElement";
+import { data } from "./projectsData";
 
-const exampleEl:ProjectElementProp = {
-    name: 'Etch a sketch',
-    img: '/img/etch-a-sketch.jpg',
-    alt: 'An Etch a sketch game with plain javascript'
-}
+const projectsFromData = data;
 
 export default function Projects() {
-    return (
-        <>
-            <h1>Here are some of my projects</h1>
-            <ProjectElement
-            {...exampleEl}></ProjectElement>
-        </>
-    )
+  return (
+    <>
+      <div id="Portfolio-Section" className="w-screen flex flex-col align-center">
+        <h1>Here are some of my projects</h1>
+        <div className="projectSection grid md:grid-cols-2 gap-4 p-4">
+          {projectsFromData.map((project) => {
+            return(
+                <ProjectElement {...project} key={project.name}></ProjectElement>
+            )
+          })
+          }
+        </div>
+      </div>
+    </>
+  );
 }
