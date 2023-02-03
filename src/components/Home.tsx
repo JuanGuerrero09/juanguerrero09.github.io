@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <div
         id="Home-Section"
-        className="bg-base-100 h-[calc(100vh-4rem)] flex flex-col justify-center items-center"
+        className="bg-base-100 h-[calc(100vh-4rem)] w-screen flex flex-col justify-center items-center"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
