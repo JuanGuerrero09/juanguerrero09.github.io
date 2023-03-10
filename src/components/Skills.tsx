@@ -18,9 +18,9 @@ const SkillElement = ({ name, icon }: skillElementProp) => {
 
 export default function Skills() {
   return (
-    <div className="Skills-Section">
+    <div className="Skills-Section flex flex-col items-center">
       <h1 className="text-5xl font-bold mb-4">My skills</h1>
-      <div className="grid grid-cols-2 justify-center gap-4 p-4 items-center md:grid-cols-3">
+      <div className="grid grid-cols-2 justify-center gap-4 p-4 items-center md:grid-cols-3 lg:w-1/2">
         {skillsData.map((skill) => {
           return <SkillElement {...skill} key={skill.name} />;
         })}
