@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ButtonGroup, Button } from "react-daisyui";
+import { Link, NavLink } from "react-router-dom";
 
 const DropdownMenu = () => {
   return (
@@ -22,16 +23,22 @@ const DropdownMenu = () => {
       </label>
       <ul
         tabIndex={0}
-        className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+        className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 !z-50"
       >
         <li>
-          <a href="#Home-Section">Homepage</a>
+          <NavLink to="/" end>
+            Home
+          </NavLink>
         </li>
         <li>
-          <a href="#About-Section">About</a>
+          <NavLink to="/about">
+            About
+          </NavLink>
         </li>
         <li>
-          <a href="#Portfolio-Section">Portfolio</a>
+          <NavLink to="/projects">
+            Projects
+          </NavLink>
         </li>
       </ul>
     </div>
@@ -42,13 +49,19 @@ const ButtonMenu = () => {
   return (
     <ButtonGroup>
       <Button color="ghost">
-        <a href="#Home-Section">Homepage</a>
+        <NavLink to="/" end>
+          Home
+        </NavLink>
       </Button>
       <Button color="ghost">
-        <a href="#About-Section">About</a>
+        <NavLink to="/about">
+          About
+        </NavLink>
       </Button>
       <Button color="ghost">
-        <a href="#Portfolio-Section">Portfolio</a>
+        <NavLink to="/projects">
+          Projects
+        </NavLink>
       </Button>
     </ButtonGroup>
   );
@@ -71,7 +84,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="navbar bg-base-100 sticky">
+      <div className="navbar bg-base-100 sticky top-0 z-50">
         <div className="navbar-start">
           <a className="btn btn-ghost normal-case text-xl text-slate-200">
             <svg

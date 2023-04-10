@@ -1,4 +1,5 @@
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 
 const ExampleComponent = () => {
   return (
@@ -23,7 +24,11 @@ const ExampleComponent = () => {
 
 export default function Home() {
   return (
-    <>
+    <motion.div
+    initial={{ opacity: 0, width: 0 }}
+    animate={{ opacity: 1, width: '100%' }}
+    exit={{ opacity: 0, x: window.innerWidth, transition:{duration: 0.5} }}
+    >
       <div
         id="Home-Section"
         className="bg-base-100 h-[calc(100vh-4rem)] w-screen flex flex-col justify-center items-center"
@@ -43,35 +48,34 @@ export default function Home() {
           />
         </svg>
         <div className="flex flex-col text-white ">
-            <TypeAnimation
-              sequence={[
-                "Juan David", // Types 'One'
-                10000,
-                "J", // Waits 1s
-                () => {
-                  console.log("Done typing!"); // Place optional callbacks anywhere in the array
-                },
-              ]}
-              wrapper="h2"
-              cursor={false}
-              repeat={Infinity}
-              className="text-6xl"
-            />
-            <TypeAnimation
-              sequence={[
-                1500,
-                "Frontend Developer", // Types 'One'
-                3000,
-                "Civil Engineer",
-                2000, 
-              ]}
-              wrapper="h3"
-              cursor={true}
-              repeat={Infinity}
-              className="text-3xl mt-2"
-            />
+          <TypeAnimation
+            sequence={[
+              "Juan David", // Types 'One'
+              10000,
+              "J", // Waits 1s
+              () => {
+                console.log("Done typing!"); // Place optional callbacks anywhere in the array
+              },
+            ]}
+            wrapper="h2"
+            cursor={false}
+            className="text-6xl"
+          />
+          <TypeAnimation
+            sequence={[
+              1500,
+              "Frontend Developer", // Types 'One'
+              3000,
+              "Civil Engineer",
+              2000,
+            ]}
+            wrapper="h3"
+            cursor={true}
+            repeat={Infinity}
+            className="text-3xl mt-2"
+          />
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
