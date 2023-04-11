@@ -1,5 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import IconsLinks from "../components/IconsLinks";
 
 const ExampleComponent = () => {
   return (
@@ -52,10 +53,6 @@ export default function Home() {
             sequence={[
               "Juan David", // Types 'One'
               10000,
-              "J", // Waits 1s
-              () => {
-                console.log("Done typing!"); // Place optional callbacks anywhere in the array
-              },
             ]}
             wrapper="h2"
             cursor={false}
@@ -74,6 +71,12 @@ export default function Home() {
             repeat={Infinity}
             className="text-3xl mt-2"
           />
+          <div className="icons ">
+          <IconsLinks />
+          <h2 className="mt-8 btn">
+          <a href='../assets/CV_Juan_2023.pdf' download>Download CV</a>
+          </h2>
+          </div>
         </div>
       </div>
     </motion.div>

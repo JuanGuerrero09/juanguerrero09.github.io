@@ -5,7 +5,7 @@ import {
 import { projectsData } from "../data";
 import { motion } from "framer-motion";
 
-const projectsFromData = projectsData;
+const projectsFromData = projectsData.reverse();
 
 export default function Projects() {
   return (
@@ -18,7 +18,7 @@ export default function Projects() {
       exit={{ opacity: 0, x: window.innerWidth, transition:{duration: 0.5} }}
       >
         <h1 className="text-5xl font-bold mb-4">
-          Here are some of my projects
+          Check some of my projects: 
         </h1>
         <div className="projectSection grid md:grid-cols-2 gap-8 p-8">
           {projectsFromData.map((project) => {

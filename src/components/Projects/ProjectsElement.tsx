@@ -1,4 +1,4 @@
-import { Card, Button } from "react-daisyui";
+import { Card, Button, ButtonGroup } from "react-daisyui";
 
 export type ProjectElementProp = {
   name: string;
@@ -6,6 +6,7 @@ export type ProjectElementProp = {
   alt: string;
   text: string;
   githubLink: string;
+  livePreviewLink?: string;
 };
 
 export const ProjectElement = ({
@@ -14,6 +15,7 @@ export const ProjectElement = ({
   alt,
   text,
   githubLink,
+  livePreviewLink,
 }: ProjectElementProp) => {
   return (
     <Card className="p-0 md:p-8">
@@ -22,10 +24,20 @@ export const ProjectElement = ({
         <Card.Title tag="h2">{name}</Card.Title>
         <p>{text}</p>
         <Card.Actions className="mt-2 mb-2 text-lg flex justify-evenly w-full">
-          <a href="" className="">Live Preview</a>
-          <a href={githubLink}>
-            <i className="devicon-github-original"></i>
-          </a>
+          <ButtonGroup>
+            {livePreviewLink ? (
+              <Button>
+                <a href={`${livePreviewLink}`} className="">
+                  Live Preview
+                </a>
+              </Button>
+            ) : <Button > {`Check the code ->`} </Button>}
+            <Button>
+              <a className=" w-28" href={githubLink}>
+                <i className="devicon-github-original"></i>
+              </a>
+            </Button>
+          </ButtonGroup>
         </Card.Actions>
       </Card.Body>
     </Card>

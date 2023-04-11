@@ -10,6 +10,7 @@ export default function About() {
       animate={{ opacity: 1, width: '100%' }}
       exit={{ opacity: 0, x: window.innerWidth, transition:{duration: 0.5} }}
     >
+      
       <div className="hero-content p-0 flex-col lg:flex-row-reverse lg:pr-8">
         <img
           src="
@@ -28,11 +29,7 @@ export default function About() {
             className="text-5xl font-bold"
           />
           <p className="py-6 px-4 text-justify lg:w-2/3">
-            Hello! My name is Juan David, I'm a 21 year old civil engineer who
-            wants to make a transition to web development. I'm passionate about
-            programming and eager to learn software engineering, my learning has
-            been completely self-taught and I'm looking for a place to start my
-            journey as a developer.
+          Hello! My name is Juan David, a 21-year-old civil engineer who is passionate about both civil engineering and web development. I have self-taught myself programming skills and eager to learn more about software engineering. As someone who enjoys both fields, I'm looking for a place to start my journey as a developer.
           </p>
           {/* <button className="btn btn-primary">Get Started</button> */}
         </div>
