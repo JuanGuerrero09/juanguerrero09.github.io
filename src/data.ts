@@ -31,8 +31,8 @@ export const projectsData: ProjectElementProp[] = [
     img: "/img/currency-converter.jpg",
     alt: "A Currency Converter app",
     text: "This Currency Converter is created using React and useContext, it's interactive and it changes all the currencies as soon as you change one.",
-    githubLink: "https://github.com/JuanGuerrero09/library",
-    livePreviewLink: 'https://juanguerrero09.github.io/library/'
+    githubLink: "https://github.com/JuanGuerrero09/currency-converter",
+    livePreviewLink: 'https://currency-converter-juanguerrero09.vercel.app'
   },
   {
     name: "Which country has more?",
